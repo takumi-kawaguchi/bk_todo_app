@@ -1,0 +1,21 @@
+{
+    "name": "todo_app",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    // set main container name
+    "service": "todo_app_web",
+    "workspaceFolder": ".",
+    "settings": {
+        "terminal.integrated.shell.linux": "bin/bash",
+        // no need?
+        "go.gopath": "/go",
+        "editor.tabSize": 4,
+        // no need?
+        "go.inferGopath": true,
+        "go.useLanguageServer": true
+    },
+    "extensions": [
+        "golang.go"
+    ]
+}

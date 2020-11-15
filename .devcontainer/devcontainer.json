@@ -3,19 +3,17 @@
     "dockerComposeFile": [
         "../docker-compose.yml"
     ],
-    // set main container name
-    "service": "todo_app_web",
-    "workspaceFolder": ".",
+    "service": "web",
+    "workspaceFolder": "/app",
     "settings": {
-        "terminal.integrated.shell.linux": "bin/bash",
-        // no need?
-        "go.gopath": "/go",
+        // "terminal.integrated.shell.linux": "/bin/bash",
         "editor.tabSize": 4,
-        // no need?
-        "go.inferGopath": true,
-        "go.useLanguageServer": true
     },
+    "forwardPorts": [
+        8080
+    ],
     "extensions": [
-        "golang.go"
+        "octref.vetur",
+        "dbaeumer.vscode-eslint"
     ]
 }

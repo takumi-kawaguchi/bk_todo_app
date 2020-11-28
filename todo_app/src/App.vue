@@ -1,23 +1,15 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col">
-        <draggable element="ul" class="list-group">
-          <li class="list-group-item" v-for="task in tasks" :key="task">
-            {{ task }}
-          </li>
-        </draggable>
-      </div>
-      <div class="col">
-        <draggable element="ul" class="list-group">
-          <li class="list-group-item" v-for="urgentTask in urgentTasks" :key="urgentTask">
-            {{ urgentTask }}
-          </li>
+      <div class="col" v-for="list in tasks" :key="list">
+        <draggable class="list-group" element="ul" :options="{ group: 'tasks' }">
+          <li class="list-group-item" v-for="item in list" :key="item">{{ item }}</li>
         </draggable>
       </div>
     </div>
     <!-- <router-view/> -->
   </div>
+  
 </template>
 
 <script>
@@ -29,8 +21,11 @@ export default {
   },
   data() {
     return {
-      tasks: ["task1", "task2", "task3", "task4"],
-      urgentTasks: ["urgentTask1", "urgentTask2", "urgentTask3", "urgentTask4"],
+      tasks: [
+        ['task1-1', 'task1-2', 'task1-3', 'task1-4', 'task1-5'],
+        ['task2-1', 'task2-2', 'task2-3', 'task2-4', 'task2-5'],
+        ['task3-1', 'task3-2', 'task3-3', 'task3-4', 'task3-5']
+      ]
     };
   },
 };
